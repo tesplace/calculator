@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+
+<script>
+    // basic operators
+
+    function add (firstNum,secondNum) {
+        return firstNum + secondNum;
+    };
+
+    function subtract (firstNum,secondNum) {
+        return firstNum - secondNum;
+    };
+
+    function multiply(firstNum,secondNum) {
+        return firstNum * secondNum;
+    };
+
+    function divide(firstNum,secondNum) {
+        return firstNum / secondNum;
+    };
+
+    // variables
+
+    let firstNum = "";
+    let secondNum = "";
+    let operator = "";
+
+    // operator 
+
+    function operate () {
+        let num1 = parseFloat(firstNum);
+        let num2 = parseFloat(secondNum);
+        let result;
+        if (operator === "x") {
+            result = multiply(firstNum,secondNum);
+            return result;
+        } else if (operator === "/") {
+            result = divide(firstNum,secondNum);
+            return result;
+        } else if (operator === "+") {
+            result = add(firstNum,secondNum);
+            return result;
+        } else if (operator === "-") {
+            result = subtract(firstNum,secondNum);
+            return result;
+        }
+    };
+
+
+
+</script>
+
+</html>
