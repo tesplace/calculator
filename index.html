@@ -44,8 +44,11 @@
             result = multiply(firstNum,secondNum);
             return result;
         } else if (operator === "/") {
+            if (num2 === 0) {
+                return "error"
+            } else {
             result = divide(firstNum,secondNum);
-            return result;
+            return result;}
         } else if (operator === "+") {
             result = add(firstNum,secondNum);
             return result;
