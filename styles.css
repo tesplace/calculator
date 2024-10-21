@@ -2,6 +2,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: black;
 }
 
 container {
@@ -11,11 +12,33 @@ container {
 }
 
 button {
-    border: 22px black;
+    border: 1px solid black;
     margin: 5px;    
     font-size: 50px;
     padding: 5px;
     border-radius: 50%;
     width: 75px;
     height: 75px;
+    color: white;
+    box-shadow: white;
+    box-shadow: -8px 10px 20px -5px rgb(117, 117, 117) inset;
+}
+
+button:hover {
+    box-shadow: white;
+    box-shadow: 8px -10px 20px -5px rgb(117, 117, 117) inset;
+
+}
+
+.number {
+    background-color: #000000;
+}
+
+.operator,
+.dot {
+    background-color: #362200;
+}
+
+.equals {
+    background-color: #998200;
 }
