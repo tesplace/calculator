@@ -3,6 +3,7 @@ body {
     justify-content: center;
     align-items: center;
     background-color: black;
+    font-family: Arial, Helvetica, sans-serif
 }
 
 container {
@@ -11,10 +12,29 @@ container {
     margin: 5px;    
 }
 
+.display-text {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.display {
+    flex-grow: 1;
+    color: rgb(32, 36, 32);
+    align-items: center;
+    display: flex;
+    justify-content: flex-end;
+    padding: 15px;
+    padding-right: 30px;
+    margin: 5px;
+    font-size: 35px;
+    border-radius: 37.5px;
+    background-color: #5b6b5b;
+}
+
 button {
     border: 1px solid black;
     margin: 5px;    
-    font-size: 50px;
+    font-size: 35px;
     padding: 5px;
     border-radius: 50%;
     width: 75px;
@@ -24,11 +44,11 @@ button {
     box-shadow: -8px 10px 20px -5px rgb(117, 117, 117) inset;
 }
 
-button:hover {
+/* button:hover {
     box-shadow: white;
     box-shadow: 8px -10px 20px -5px rgb(117, 117, 117) inset;
 
-}
+} */
 
 .number {
     background-color: #000000;
