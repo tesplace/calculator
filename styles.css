@@ -11,10 +11,11 @@ container {
     flex-direction: column;
     margin: 5px;    
 }
-
+ 
 .display-text {
     display: flex;
     justify-content: flex-end;
+    flex-grow: 0;
 }
 
 .display {
@@ -40,25 +41,35 @@ button {
     width: 75px;
     height: 75px;
     color: white;
-    box-shadow: white;
-    box-shadow: -8px 10px 20px -5px rgb(117, 117, 117) inset;
+    box-shadow: rgba(255, 255, 255, 0.541);
+    box-shadow: -8px 10px 20px -5px rgba(117, 117, 117, 0.712) inset;
+    transition: 0.3s;
 }
 
-/* button:hover {
+button:active {
     box-shadow: white;
-    box-shadow: 8px -10px 20px -5px rgb(117, 117, 117) inset;
-
-} */
+    box-shadow: 8px -10px 20px -5px rgba(117, 117, 117, 0.527) inset;
+}
 
 .number {
     background-color: #000000;
+}
+.number:active {
+    background-color: #252525;
 }
 
 .operator,
 .dot {
     background-color: #362200;
 }
+.operator:active,
+.dot:active {
+    background-color: #533500;
+}
 
 .equals {
     background-color: #998200;
+}
+.equals:active {
+    background-color: #b89c01;
 }

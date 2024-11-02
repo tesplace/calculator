@@ -7,6 +7,7 @@ const num6 = document.querySelector(".num6");
 const num7 = document.querySelector(".num7");
 const num8 = document.querySelector(".num8");
 const num9 = document.querySelector(".num9");
+const dot = document.querySelector(".dot")
 const numbers = document.querySelectorAll(".number")
 
 const display = document.querySelector(".display");
@@ -61,6 +62,10 @@ num9.addEventListener("click", () => {
     updateDisplay(9);
 });
 
+dot.addEventListener("click", () => {
+    updateDisplay(".");
+});
+
 // operators, equals, clear
 
 operators.forEach(op => op.addEventListener("click", () => {
@@ -70,19 +75,23 @@ operators.forEach(op => op.addEventListener("click", () => {
 
 }))
 
-// numbers.forEach(num => num.addEventListener("click", () => {
-//     if (parseFloat(display.textContent) === firstNum) {
-//         display.textContent = 0;
-//         console.log("test2")
-//     }
-// }))
+numbers.forEach(num => num.addEventListener("click", () => {
+    if (parseFloat(display.textContent) === parseFloat(firstNum + num.textContent)) {
+        display.textContent = num.textContent;
+        console.log("test2")
+    }
+}));
 
 equals.addEventListener("click", () => {
     secondNum = parseFloat(display.textContent)
-    updateDisplay(operate());
+    display.textContent = operate();
     console.log("test3")
 
 });
+
+clear.addEventListener("click", () => {
+    display.textContent = 0;
+})
 
 
 // basic operators
