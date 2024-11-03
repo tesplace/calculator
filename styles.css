@@ -64,6 +64,7 @@ button {
     box-shadow: rgba(255, 255, 255, 0.541);
     box-shadow: -8px 10px 20px -5px rgba(117, 117, 117, 0.712) inset;
     transition: 0.3s;
+    cursor: pointer;
 }
 
 button:active {
