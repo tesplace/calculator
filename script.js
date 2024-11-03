@@ -1,3 +1,4 @@
+const num0 = document.querySelector(".num0");
 const num1 = document.querySelector(".num1");
 const num2 = document.querySelector(".num2");
 const num3 = document.querySelector(".num3");
@@ -25,6 +26,10 @@ const updateDisplay = (value) => {
 };
 
 // number buttons
+
+num0.addEventListener("click", () => {
+    updateDisplay(0);
+});
 
 num1.addEventListener("click", () => {
     updateDisplay(1);
@@ -68,29 +73,74 @@ dot.addEventListener("click", () => {
 
 // operators, equals, clear
 
-operators.forEach(op => op.addEventListener("click", () => {
-    firstNum = parseFloat(display.textContent)
-    operator = op.textContent
-    console.log("test1")
+// operators.forEach(op => op.addEventListener("click", () => {
+//     if (firstNum != "") {
+//         secondNum = parseFloat(display.textContent);
+//         operator = op.textContent
+//         display.textContent = operate();
+//     } else {
+//         firstNum = parseFloat(display.textContent);
+//         operator = op.textContent
+//         console.log(`${firstNum}`)
 
+//     }
+// }))
+
+
+operators.forEach(op => op.addEventListener("click", () => {
+    if (firstNum != "0" && operator === "") {
+        firstNum = parseFloat(display.textContent);
+        operator = op.textContent
+        console.log(`${firstNum}`)
+    } else if (firstNum != "" && secondNum === "" && operator != "") {
+        secondNum = parseFloat(display.textContent);
+        display.textContent = operate();
+        firstNum = parseFloat(display.textContent);
+        secondNum = ""
+        operator = op.textContent
+    }
 }))
 
+// operators.forEach(op => op.addEventListener("click", () => {
+//     if (firstNum != "" && operator != "") {
+//         operator = op.textContent;
+//     } else if (firstNum != "" && operator === "") {
+//         secondNum = parseFloat(display.textContent);
+//         operator = op.textContent
+//         display.textContent = operate();
+//     } else {
+//         firstNum = parseFloat(display.textContent);
+//         operator = op.textContent
+//     }
+// }))
+
 numbers.forEach(num => num.addEventListener("click", () => {
-    if (parseFloat(display.textContent) === parseFloat(firstNum + num.textContent)) {
+    if (firstNum != "" && secondNum != "") {
         display.textContent = num.textContent;
-        console.log("test2")
+        firstNum = operate()
+        secondNum = "";
+    } else if (parseFloat(display.textContent) === parseFloat(firstNum + num.textContent)) {
+        display.textContent = num.textContent;
     }
 }));
 
 equals.addEventListener("click", () => {
-    secondNum = parseFloat(display.textContent)
-    display.textContent = operate();
-    console.log("test3")
-
-});
+    if (display.textContent != 0) {
+        secondNum = parseFloat(display.textContent)
+        display.textContent = operate();
+        firstNum = display.textContent;
+        secondNum = "";
+        operator = "";
+    } else {
+        display.textContent = "error";
+    }
+})
 
 clear.addEventListener("click", () => {
     display.textContent = 0;
+    firstNum = "";
+    secondNum = "";
+    operator = "";
 })
 
 
@@ -126,13 +176,13 @@ function operate () {
     let result;
     if (operator === "x") {
         result = multiply(firstNum,secondNum);
-        return result;
+        return Math.round(result*100)/100;
     } else if (operator === "/") {
         if (num2 === 0) {
             return "error"
         } else {
         result = divide(firstNum,secondNum);
-        return result;}
+        return Math.round(result*100)/100;}
     } else if (operator === "+") {
         result = add(firstNum,secondNum);
         return result;
