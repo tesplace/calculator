@@ -1,15 +1,33 @@
 body {
     display: flex;
-    justify-content: center;
-    align-items: center;
+    min-height: 100vh;
     background-color: black;
-    font-family: Arial, Helvetica, sans-serif
+    font-family: Arial, Helvetica, sans-serif;
+    overflow: hidden;
+}
+
+header {
+    display: flex;
+    justify-content: start;
+    font-size: 50px;
+    font-weight: bolder;
+    margin: 10px;
+    color: #50432c;
+}
+
+footer {
+    display: flex;
+    justify-content: start;
+    font-size: 15x;
+    font-weight: 600;
+    margin: 10px;
+    color: #50432c;
 }
 
 container {
     display: flex;
     flex-direction: column;
-    margin: 5px;    
+    margin: auto;
 }
  
 .display-text {
@@ -25,10 +43,13 @@ container {
     justify-content: flex-end;
     padding: 15px;
     padding-right: 30px;
+    padding-left: 30px;
     margin: 5px;
     font-size: 35px;
     border-radius: 37.5px;
     background-color: #5b6b5b;
+    width: 194.359px;
+    overflow: hidden;
 }
 
 button {
