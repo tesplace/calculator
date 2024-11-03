@@ -27,6 +27,7 @@ const updateDisplay = (value) => {
 
 // number buttons
 
+
 num0.addEventListener("click", () => {
     updateDisplay(0);
 });
@@ -73,20 +74,6 @@ dot.addEventListener("click", () => {
 
 // operators, equals, clear
 
-// operators.forEach(op => op.addEventListener("click", () => {
-//     if (firstNum != "") {
-//         secondNum = parseFloat(display.textContent);
-//         operator = op.textContent
-//         display.textContent = operate();
-//     } else {
-//         firstNum = parseFloat(display.textContent);
-//         operator = op.textContent
-//         console.log(`${firstNum}`)
-
-//     }
-// }))
-
-
 operators.forEach(op => op.addEventListener("click", () => {
     if (firstNum != "0" && operator === "") {
         firstNum = parseFloat(display.textContent);
@@ -101,18 +88,6 @@ operators.forEach(op => op.addEventListener("click", () => {
     }
 }))
 
-// operators.forEach(op => op.addEventListener("click", () => {
-//     if (firstNum != "" && operator != "") {
-//         operator = op.textContent;
-//     } else if (firstNum != "" && operator === "") {
-//         secondNum = parseFloat(display.textContent);
-//         operator = op.textContent
-//         display.textContent = operate();
-//     } else {
-//         firstNum = parseFloat(display.textContent);
-//         operator = op.textContent
-//     }
-// }))
 
 numbers.forEach(num => num.addEventListener("click", () => {
     if (firstNum != "" && secondNum != "") {
